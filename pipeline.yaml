@@ -3,6 +3,10 @@ kind: Pipeline
 metadata:
   name: tax-calculator-pipeline
 spec:
+  params:
+    - name: registryNamespace
+      type: string
+      description: The container registry namespace to push the image to
   workspaces:
     - name: source
   tasks:
@@ -12,7 +16,6 @@ spec:
       workspaces:
         - name: source
           workspace: source
-
     - name: tests
       taskRef:
         name: jasmine
@@ -21,7 +24,6 @@ spec:
       workspaces:
         - name: source
           workspace: source
-
     - name: build
       taskRef:
         name: kaniko
