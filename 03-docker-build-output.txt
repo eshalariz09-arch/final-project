@@ -1,0 +1,25 @@
+PS C:\Users\INDUS\tax_calculator> docker build -t tax-calculator .
+[+] Building 7.6s (11/11) FINISHED                        docker:desktop-linux
+ => [internal] load build definition from Dockerfile                      0.4s
+ => => transferring dockerfile: 309B                                      0.1s
+ => [internal] load metadata for docker.io/library/nginx:latest           0.5s
+ => [internal] load .dockerignore                                         0.2s
+ => => transferring context: 2B                                           0.0s
+ => [1/6] FROM docker.io/library/nginx:latest@sha256:dd0e2565131859c7fef  1.2s
+ => => resolve docker.io/library/nginx:latest@sha256:dd0e2565131859c7fef  0.2s
+ => [internal] load build context                                         0.4s
+ => => transferring context: 2.41kB                                       0.0s
+ => [2/6] COPY favicon.ico /usr/share/nginx/html/favicon.ico              0.3s
+ => [3/6] COPY index.html /usr/share/nginx/html/index.html                0.3s
+ => [4/6] COPY script.js /usr/share/nginx/html/script.js                  0.3s
+ => [5/6] COPY style.css /usr/share/nginx/html/style.css                  0.3s
+ => [6/6] COPY taxCalculator.js /usr/share/nginx/html/taxCalculator.js    0.3s
+ => exporting to image                                                    3.0s
+ => => exporting layers                                                   2.0s
+ => => exporting manifest sha256:0d845da9deddce34c4cb47c74b11916fec9c540  0.1s
+ => => exporting config sha256:fbe2d4398c7ef7cf35fa9e1ef3cf9ab8f1b6301f2  0.1s
+ => => exporting attestation manifest sha256:f5bfd1dbbf53d23e57176f02059  0.2s
+ => => exporting manifest list sha256:3fc4f2c5ba63ffa641380c7c4450dd5072  0.1s
+ => => naming to docker.io/library/tax-calculator:latest                  0.0s
+ => => unpacking to docker.io/library/tax-calculator:latest               0.4s
+PS C:\Users\INDUS\tax_calculator>

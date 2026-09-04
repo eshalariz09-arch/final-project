@@ -1,0 +1,10 @@
+PS C:\Users\INDUS\tax_calculator> npx jasmine
+Randomized with seed 98598
+Started
+.......
+
+
+7 specs, 0 failures
+Finished in 0.16 seconds
+Randomized with seed 98598 (jasmine --random=true --seed=98598)
+PS C:\Users\INDUS\tax_calculator> 
