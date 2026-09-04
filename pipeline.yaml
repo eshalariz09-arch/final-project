@@ -1,0 +1,35 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: tax-calculator-pipeline
+spec:
+  workspaces:
+    - name: source
+  tasks:
+    - name: npminstall
+      taskRef:
+        name: npm
+      workspaces:
+        - name: source
+          workspace: source
+
+    - name: tests
+      taskRef:
+        name: jasmine
+      runAfter:
+        - npminstall
+      workspaces:
+        - name: source
+          workspace: source
+
+    - name: build
+      taskRef:
+        name: kaniko
+      runAfter:
+        - tests
+      workspaces:
+        - name: source
+          workspace: source
+      params:
+        - name: IMAGE
+          value: us.icr.io/$(params.registryNamespace)/tax-calculator:latest
